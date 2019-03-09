@@ -1,0 +1,21 @@
+body {
+  padding: 10px;
+  text-align: center; }
+  body .box {
+    display: inline-block;
+    margin: 10px;
+    width: 200px;
+    border: 1px solid #000;
+    min-height: 100px;
+    text-align: center;
+    vertical-align: top;
+    opacity: 0.7; }
+    body .box header {
+      display: block;
+      border-bottom: 1px solid #000; }
+  body .important {
+    opacity: 1; }
+  body .special-header {
+    color: purple; }
+  body .highlighted {
+    background-color: gold; }
