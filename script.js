@@ -31,7 +31,7 @@ var data = [
 	},
 ];
 
-var boxContent = document.querySelectorAll('.content');
+
 var boxes = document.querySelectorAll('.box');
 
 console.log(boxes + 'boxes');
@@ -41,13 +41,31 @@ for (i = 0; i < data.length; i++) {
 		console.log(boxes[i] + 'boxes[i]');
 		var boxHeader = boxes[i].querySelector('header');
 		console.log(boxHeader + 'boxHeader');
+
 		var boxContent = boxes[i].querySelector('.content');
 		console.log(boxContent + 'boxContent');
+		var box = boxes[i];
+		console.log(box + 'boxboxboxb');
+
 		boxes[i].id = data[i]['id'];
-		console.log(boxes.id + 'boxes.id');
+		console.log(boxes[i].id + 'boxes.id');
+
 		boxHeader.innerHTML = data[i]['title'];
 		boxContent.innerHTML = data[i]['content'];
-		boxes[i].classList.add(data[i]['categories']);
+
+		
+		var catForHeaderFiltered = data[i]['categories'].filter(function (value) {
+			return value.includes('special');
+		})
+		console.log(catForHeaderFiltered + ' header filter');
+		boxHeader.classList.add(catForHeaderFiltered);
+		
+		var catForBoxFiltered = data[i]['categories'].filter(function (value){
+			return !value.includes('special');
+		})
+		console.log(catForBoxFiltered + ' box filter');
+		boxes[i].classList.add(catForBoxFiltered);
+
 	}
 
 }
