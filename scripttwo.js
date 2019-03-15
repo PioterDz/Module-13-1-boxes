@@ -31,25 +31,16 @@ var data = [
 	},
 ];
 
-for (i = 0; i <= data.length; i++) {
-
-	var div = document.createElement('div');
-	var header = document.createElement('header');
-
-	div.classList.add('box');
-    header.innerHTML = data[i].title;
-
-	for (j=0; j < data[i].categories.length; j++) {
-		header.classList.add(data[i].categories[j]);
-	}
-
-	var p = document.createElement('p');
-	p.innerHTML = data[i].content;
-	document.body.appendChild(div);
-	div.appendChild(header);
-	div.appendChild(p);
-
-	
-    
-    
+for (i = 0; i < data.length; i++) {
+    var div = document.createElement('div');
+    div.classList.add('box');
+    var header = document.createElement('header');
+    header.innerHTML = data.title;
+    header.classList.add(data.categories);
+    var content = document.createElement('p').classList.add('content');
+    content = data.content;
+    div.appendChild(header);
+    div.appendChild(content);
+    var body = document.getElementsByTagName('body');
+    body.appendChild(div);
 }
