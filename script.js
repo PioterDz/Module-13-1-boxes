@@ -49,7 +49,5 @@ for (i = 0; i <= data.length; i++) {
 	div.appendChild(header);
 	div.appendChild(p);
 
-	
-    
     
 }
